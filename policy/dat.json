@@ -1,0 +1,104 @@
+[
+	{
+		"con":{"e":"A drought happens,what should you do?","c":"发生旱灾,如何应对?"},
+		"cho":[
+			{
+				"name":{"e":"Make the rich donate money and maintain the tax rate","c":"勒令地方富商捐款赈灾,维持税收"},
+				"d":[0,0,1,0]
+			},
+			{
+				"name":{"e":"Cut the tax","c":"减少税收"},
+				"d":[-2,0,0,-1]
+			},
+			{
+				"name":{"e":"Maintain the tax rate and open official barn to give out food","c":"维持税收,开放义仓"},
+				"d":[-2,0,2,1]
+			}
+		]
+	},
+	{
+		"con":{"e":"Who should be responsible for this year's test?","c":"谁来担任今年科举考试的命题人?"},
+		"cho":[
+			{
+				"name":{"e":"The official responsible for civil affair","c":"负责民生问题的官员"},
+				"d":[1,0,1,-1]
+			},
+			{
+				"name":{"e":"The official responsible for law enforcement","c":"负责刑罚问题的官员"},
+				"d":[0,0,0,2]
+			},
+			{
+				"name":{"e":"The official responsible for manners","c":"负责朝臣进退的官员"},
+				"d":[0,0,-1,-1]
+			}
+		]
+	},
+	{
+		"con":{"e":"What to build this year?","c":"今年的工程重点在于?"},
+		"cho":[
+			{
+				"name":{"e":"Continue to maintain local water conservancy facilities","c":"继续修缮地方的水利工程"},
+				"d":[-1,0,2,0]
+			},
+			{
+				"name":{"e":"Help the army build fortifications","c":"帮助军队兴建边防工程"},
+				"d":[-1,2,-1,-1]
+			},
+			{
+				"name":{"e":"Build buildings for ceremonies","c":"兴建皇帝祭天所需的仪台"},
+				"d":[-1,0,0,2]
+			}
+		]
+	},
+	{
+		"con":{"e":"Which part of the law should be strengthened?","c":"哪一部分律法需要加强?"},
+		"cho":[
+			{
+				"name":{"e":"About limiting the power of the central government","c":"有关限制朝臣权力部分"},
+				"d":[0,0,-1,2]
+			},
+			{
+				"name":{"e":"About limiting the power of the local government","c":"有关规范地方管理部分"},
+				"d":[0,-1,0,2]
+			},
+			{
+				"name":{"e":"About limiting the power of the local army","c":"有关削弱边境将领部分"},
+				"d":[0,-1,0,2]
+			}
+		]
+	},
+	{
+		"con":{"e":"How to strengthen the central army?","c":"如何加强禁军?"},
+		"cho":[
+			{
+				"name":{"e":"By dispatching excellent local soldiers and generals to the central army","c":"调遣边疆地方得力将兵,编入禁军"},
+				"d":[0,-2,-1,1]
+			},
+			{
+				"name":{"e":"By holding tests to select generals","c":"增设无惧,从中择优挑选将才"},
+				"d":[0,1,1,0]
+			},
+			{
+				"name":{"e":"By recruiting local refugees","c":"将地方流民编入禁军"},
+				"d":[0,-1,1,-1]
+			}
+		]
+	},
+	{
+		"con":{"e":"Which department should be downsized?","c":"应裁撤哪个部门的官员?"},
+		"cho":[
+			{
+				"name":{"e":"The department of civil affair","c":"裁撤负责民生的官员"},
+				"d":[-1,0,0,1]
+			},
+			{
+				"name":{"e":"The department for punishment","c":"裁撤负责刑罚的部门"},
+				"d":[0,0,0,-1]
+			},
+			{
+				"name":{"e":"None","c":"保持不变"},
+				"d":[0,0,0,0]
+			}
+		]
+	}
+]
