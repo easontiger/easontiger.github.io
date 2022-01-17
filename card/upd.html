@@ -1,0 +1,645 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-fences-math .MathJax_SVG_Display, .md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: visible; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; zoom: 90%; }
+#math-inline-preview-content { zoom: 1.1; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-require-zoom-fix foreignobject { font-size: var(--mermaid-font-zoom); }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-math .MathJax_SVG_Display { margin-top: 8px; cursor: default; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+
+
+</style><title>upd</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><style>
+	option{
+		color:gray;
+		font-style:italic;
+	}
+	hero{
+		color:lightgreen;
+	}
+	magic{
+		color:mediumblue;
+		font-style:italic;
+	}
+	mechanism{
+		font-style:italic;
+	}
+	type{
+		color:burlywood;
+	}
+	creature{
+		color:aquamarine;
+	}
+	type{
+		color:burlywood;
+	}
+	species{
+		color:seagreen;
+	}
+	ld{
+		background-color:#ffa50080;
+	}
+	exp{
+		color:lightgreen;
+	}
+	money{
+		color:gold;
+	}
+</style><p><a href="index.html"><span>Back to index</span></a></p><p><span>21.10.13</span></p><ol start='' ><li><p><code>➕<span> </span><type><span>Creature</span></type><span>:</span></code></p><ul><li><code><span>name:法师</span></code></li><li><code><span>attr:</span></code><span>5/(0+3)/3</span></li><li><code><span>special effect:</span></code><mechanism><span>Ranged;Ms+1</span></mechanism></li></ul></li><li><p><code>➕<span> </span><type><span>Creature</span></type><span>:</span></code></p><ul><li><code><span>name:机枪手</span></code></li><li><code><span>attr:</span></code><span>5/(1+0)/4</span></li><li><code><span>special effect:</span></code><mechanism><span>Atn=4;Ranged</span></mechanism></li></ul></li></ol><p><span>21.10.11</span></p><ol start='' ><li><p><code>🔧<span>bug:</span></code><span>Creature kill give </span><money><span>money</span></money><span> according to the current Player instead of the Player the </span><type><span>Creature</span></type><span> belongs to</span></p></li><li><p><code><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1.935ex" height="1.974ex" viewBox="0 -791.7 833 850.1" role="img" focusable="false" style="vertical-align: -0.136ex;"><defs><path stroke-width="0" id="E55-MJMAIN-394" d="M51 0Q46 4 46 7Q46 9 215 357T388 709Q391 716 416 716Q439 716 444 709Q447 705 616 357T786 7Q786 4 781 0H51ZM507 344L384 596L137 92L383 91H630Q630 93 507 344Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E55-MJMAIN-394" x="0" y="0"></use></g></svg></span><script type="math/tex">\Delta</script><span> </span><type><span>Creature</span></type><span>: </span><Creature><span>Goblin</span></Creature></code><span>:</span></p><ol start='' ><li><p><span>cost:2</span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.323ex" height="1.644ex" viewBox="0 -605.1 1000 707.6" role="img" focusable="false" style="vertical-align: -0.238ex;"><defs><path stroke-width="0" id="E37-MJMAIN-2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E37-MJMAIN-2192" x="0" y="0"></use></g></svg></span><script type="math/tex">\rightarrow</script><span>3</span></p></li><li><p><span>new effects:</span></p><ol start='' ><li><span>gain </span><money><span>floor(half of the target&#39;s </span><mechanism><span>value</span></mechanism><span>)</span></money><span> when it attacks</span></li><li><span>gain another </span><money><span>floor(half of the victim&#39;s </span><mechanism><span>value</span></mechanism><span>)</span></money><span> when it kills</span></li></ol></li></ol></li></ol><p><span>21.10.4</span></p><ol start='' ><li><p><span>Introducing the </span><mechanism><span>monetary System</span></mechanism><span>:</span></p><ol start='' ><li><span>Each player now has an attribute </span><mechanism><span>Money</span></mechanism><span>, which is initially </span><money><span>0</span></money></li><li><span>Every </span><type><span>Creature</span></type><span> now has an attribute </span><mechanism><span>value</span></mechanism><span>, which is initially </span><money><span>5*its </span><mechanism><span>cost</span></mechanism></money></li></ol></li><li><p><span>A player gains </span><mechanism><span>Money</span></mechanism><span> when he or his creature kills(</span><money><span>floor(half of the victim&#39;s </span><mechanism><span>value</span></mechanism><span>)</span></money><span>)</span></p></li><li><p><span>Every game the  </span><mechanism><span>Store</span></mechanism><span> will sell 10 random </span><type><span>Creatures</span></type><span> at the price of </span><money><span>their value</span></money><span>;Once purchased,the target </span><type><span>Creature</span></type><span> will be put into your hand with its </span><mechanism><span>cost</span></mechanism><span> decreased to 0</span></p></li></ol><p><span>21.9.28</span></p><ol start='' ><li><code>🔧<span>bug:</span></code><span>your </span><type><span>Creature</span></type><span> can be </span><mechanism><span>upgraded</span></mechanism><span> by</span>
+<span>your opponent(though it makes no difference)</span></li></ol><p><span>21.9.27</span></p><ol start='' ><li><p><span>Introducing the </span><mechanism><span>Exp(experience) System</span></mechanism><span>:</span></p><ol start='' ><li><p><span>Every </span><type><span>Creature</span></type><span> now has an attribute </span><mechanism><span>Exp</span></mechanism><span>, which is initially </span><exp><span>0</span></exp></p></li><li><p><span>A </span><type><span>Creature</span></type><span> gains </span><mechanism><span>Exp</span></mechanism><span> when:</span></p><ol start='' ><li><span>it </span><mechanism><span>attacks</span></mechanism><span> and uses up its </span><mechanism><span>attack chances</span></mechanism><span>(</span><exp><span>2</span></exp><span>);</span></li></ol></li><li><p><span>it </span><mechanism><span>counterattacks</span></mechanism><span>(</span><exp><span>1</span></exp><span>);</span></p></li><li><p><span>it </span><mechanism><span>kills</span></mechanism><span>(</span><exp><span>floor(half of the victim&#39;s </span><mechanism><span>Exp</span></mechanism><span>)</span></exp><span>)</span></p></li><li><p><span>When a </span><mechanism><span>Normal</span></mechanism><span> </span><type><span>Creature</span></type><span> gains enough </span><mechanism><span>Exp</span></mechanism><span>,which is now </span><exp><span>5</span></exp><span>,it can be upgraded to </span><ld><span>legendary</span></ld><span>!!!!</span></p></li></ol></li><li><p><code>🔧<span>bug:</span></code><span>The description of </span><ld><span>legendary</span></ld><span> </span><creature><span>zombie</span></creature><span> is wrong when in hand</span></p></li></ol><p><span>21.9.2?</span></p><ol start='' ><li><a href="index.html"><span>index.html</span></a><span> now supports split screen</span></li><li><span>release </span><a href="statics.html"><span>statics.html</span></a></li></ol><p><span>21.7.31</span></p><ol start='' ><li><span>Now some </span><type><span>Magics</span></type><span>(in fact only 1 now) can have lasted effect</span></li><li><code>➕<ld><span>legendary</span></ld><span> effect of </span><magic><span>Space</span></magic><span>:</span></code><span>Until your next turn </span><mechanism><span>silence</span></mechanism><span> and kill all </span><type><span>Creature</span></type><span> summoned.(But their </span><mechanism><span>call</span></mechanism><span> will be activated)</span></li></ol><p><span>21.7.17</span></p><ol start='' ><li><code><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1.935ex" height="1.974ex" viewBox="0 -791.7 833 850.1" role="img" focusable="false" style="vertical-align: -0.136ex;"><defs><path stroke-width="0" id="E55-MJMAIN-394" d="M51 0Q46 4 46 7Q46 9 215 357T388 709Q391 716 416 716Q439 716 444 709Q447 705 616 357T786 7Q786 4 781 0H51ZM507 344L384 596L137 92L383 91H630Q630 93 507 344Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E55-MJMAIN-394" x="0" y="0"></use></g></svg></span><script type="math/tex">\Delta</script><mechanism><span>Silence</span></mechanism><span>:</span></code><span>It&#39;ll also remove the target&#39;s buff,</span><mechanism><span>shield</span></mechanism><span>,</span><mechanism><span>sacred shield</span></mechanism><span>.</span></li></ol><p><span>21.7.14</span></p><ol start='' ><li><p><code>➕<span> </span><type><span>Creature</span></type><span>:</span></code></p><ul><li><code><span>name:魔力元素</span></code></li><li><code><span>attr:</span></code><span>2/(0+1)/1</span></li><li><code><span>special effect:</span></code><mechanism><span>Ms+1</span></mechanism></li><li><code><span>species:</span></code><species><span>Element</span></species></li></ul></li></ol><p><span>21.7.13</span></p><ol start='' ><li><code>➕<ld><span>legendary</span></ld><span> effect of </span><magic><span>Clone</span></magic><span>:</span></code><span>Call a complete copy instead of a 1/1 one</span></li></ol><p><span>21.7.10</span></p><ol start='' ><li><code>🔧<span>bug:</span></code><magic><span>Smoke</span></magic><span> gives the target 0.1 more critical rate instead of giving the next </span><type><span>Creature</span></type><span> hide.</span></li></ol><p><span>21.7.7</span></p><ol start='' ><li><p><code><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1.935ex" height="1.974ex" viewBox="0 -791.7 833 850.1" role="img" focusable="false" style="vertical-align: -0.136ex;"><defs><path stroke-width="0" id="E55-MJMAIN-394" d="M51 0Q46 4 46 7Q46 9 215 357T388 709Q391 716 416 716Q439 716 444 709Q447 705 616 357T786 7Q786 4 781 0H51ZM507 344L384 596L137 92L383 91H630Q630 93 507 344Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E55-MJMAIN-394" x="0" y="0"></use></g></svg></span><script type="math/tex">\Delta</script><span>name of drugI:</span></code><del><span>一号药剂</span></del><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.323ex" height="1.644ex" viewBox="0 -605.1 1000 707.6" role="img" focusable="false" style="vertical-align: -0.238ex;"><defs><path stroke-width="0" id="E37-MJMAIN-2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E37-MJMAIN-2192" x="0" y="0"></use></g></svg></span><script type="math/tex">\rightarrow</script><span>力量药剂</span></p></li><li><p><code><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1.935ex" height="1.974ex" viewBox="0 -791.7 833 850.1" role="img" focusable="false" style="vertical-align: -0.136ex;"><defs><path stroke-width="0" id="E55-MJMAIN-394" d="M51 0Q46 4 46 7Q46 9 215 357T388 709Q391 716 416 716Q439 716 444 709Q447 705 616 357T786 7Q786 4 781 0H51ZM507 344L384 596L137 92L383 91H630Q630 93 507 344Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E55-MJMAIN-394" x="0" y="0"></use></g></svg></span><script type="math/tex">\Delta</script><span>name of drugII</span></code><del><span>二号药剂</span></del><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.323ex" height="1.644ex" viewBox="0 -605.1 1000 707.6" role="img" focusable="false" style="vertical-align: -0.238ex;"><defs><path stroke-width="0" id="E37-MJMAIN-2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E37-MJMAIN-2192" x="0" y="0"></use></g></svg></span><script type="math/tex">\rightarrow</script><span>治疗药剂</span></p></li><li><p><code>➕<span> </span><type><span>Magic</span></type><span>:</span></code></p><ul><li><code><span>name:</span></code><magic><span>魔力药剂</span></magic></li><li><code><span>cost:</span></code><span>2</span></li><li><code><span>effect:</span></code><span>Increase your </span><mechanism><span>Ms</span></mechanism><span> by 1.</span></li><li><code><ld><span>legendary</span></ld><span> effect:</span></code><span>Also increase your magic damage by 1.</span></li></ul></li><li><p><code>➕<span> </span><ld><span>legendary</span></ld><span> effect of </span><magic><ld><span>Arrows</span></ld></magic><span>:</span></code><span>Deal 1 damage to all enemy Creatures twice.</span></p></li></ol><p><span>21.7.1</span></p><ol start='' ><li><code>🔧<span>bug:</span></code><ld><span>Legendary </span><creature><span>sniper</span></creature><span>&#39;s</span></ld><span> special effect isn&#39;t described in the card description</span></li></ol><p><span>21.6.30</span></p><ol start='' ><li><p><code>➕<span> </span><type><span>Species</span></type><span>:</span></code></p><ul><li><code><span>name:</span></code><species><span>Undead</span></species></li><li><code><span>Current </span><type><span>Creature</span></type><span> belonging to *this:</span></code><Creature><span>skeleton</span></Creature><span>,</span><Creature><span>guard</span></Creature><span>,</span><Creature><span>bomb-man</span></Creature></li></ul></li><li><p><code>➕<span> </span><ld><span>legendary</span></ld><span> effect of </span><ld><creature><span>guard</span></creature></ld><span>:</span></code><mechanism><span>s-shield,taunt</span></mechanism><del><span>(In fact,the s-shiled effect was written a long time ago but I mistyped &#39;m-shield&#39; for &#39;s-shield&#39;)</span></del></p></li><li><p><code>➕<span> </span><type><span>Species</span></type><span>:</span></code></p><ul><li><code><span>name:</span></code><species><span>Element</span></species></li><li><code><span>Current </span><type><span>Creature</span></type><span> belonging to *this:</span></code><Creature><span>f-element</span></Creature><span>,</span><Creature><span>i-element</span></Creature><span>,</span><Creature><span>m-element</span></Creature><span>,</span><Creature><span>wi-element</span></Creature></li></ul></li></ol><p><span>21.6.28</span></p><ol start='' ><li><p><code><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1.935ex" height="1.974ex" viewBox="0 -791.7 833 850.1" role="img" focusable="false" style="vertical-align: -0.136ex;"><defs><path stroke-width="0" id="E55-MJMAIN-394" d="M51 0Q46 4 46 7Q46 9 215 357T388 709Q391 716 416 716Q439 716 444 709Q447 705 616 357T786 7Q786 4 781 0H51ZM507 344L384 596L137 92L383 91H630Q630 93 507 344Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E55-MJMAIN-394" x="0" y="0"></use></g></svg></span><script type="math/tex">\Delta</script><type><span>Skill</span></type><span> of </span><hero><span>Warlock</span></hero><span>:</span></code><del><span>(2)deal2 damage to your hero,draw a card</span></del><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.323ex" height="1.644ex" viewBox="0 -605.1 1000 707.6" role="img" focusable="false" style="vertical-align: -0.238ex;"><defs><path stroke-width="0" id="E37-MJMAIN-2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E37-MJMAIN-2192" x="0" y="0"></use></g></svg></span><script type="math/tex">\rightarrow</script><span>(2)deal2 damage to your hero,draw a card and reduce it&#39;s cost by four </span><del><span>(of courese,the cost after reduction should be no less than 0;I&#39;m not sure whether this is a balanced skill or not,but let&#39;s suppoose it is)</span></del></p></li><li><p><code>➕<span> </span><type><span>Magic</span></type><span>:</span></code></p><ul><li><code><span>name:</span></code><magic><span>烟雾弹</span></magic></li><li><code><span>cost:</span></code><span>4</span></li><li><code><span>effect:</span></code><span>使一个随从及其相邻随从获得隐匿</span><del><span>(Another unbalanced card)</span></del></li></ul></li></ol><p><span>21.6.26</span></p><ol start='' ><li><code><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1.935ex" height="1.974ex" viewBox="0 -791.7 833 850.1" role="img" focusable="false" style="vertical-align: -0.136ex;"><defs><path stroke-width="0" id="E55-MJMAIN-394" d="M51 0Q46 4 46 7Q46 9 215 357T388 709Q391 716 416 716Q439 716 444 709Q447 705 616 357T786 7Q786 4 781 0H51ZM507 344L384 596L137 92L383 91H630Q630 93 507 344Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E55-MJMAIN-394" x="0" y="0"></use></g></svg></span><script type="math/tex">\Delta</script><type><span>Creature</span></type><span> </span><mechanism><span>effect</span></mechanism><span>:</span></code><creature><span>zombies</span></creature><span> infected(created) by </span><creature><span>Zombie</span></creature><span> will gain </span><mechanism><span>death:deal one magical damage to the enemy hero</span></mechanism><del><span>(A slight buff to it although it&#39;s very difficult to infect one,so this should make no difference)</span></del></li></ol><p><span>21.6.25</span></p><ol start='' ><li><code>➕<a href="deck.html"><span>deck.html</span></a></code></li></ol><p><span>21.5.27</span></p><ol start='' ><li><code>🔧<span>bug:</span></code><span>to_sheep will cause </span><type><span>Creature</span></type><span> with </span><mechanism><span>taunt</span></mechanism><span> to lose 2 layers of taunt which means you&#39;ll have to kill one less </span><mechanism><span>taunt</span></mechanism><span> </span><type><span>Creature</span></type><span> on its side to make its owner untaunted </span><del><span>(still powerful,isn&#39;t it?)</span></del></li></ol><p><span>21.5.24</span></p><ol start='' ><li><code><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1.935ex" height="1.974ex" viewBox="0 -791.7 833 850.1" role="img" focusable="false" style="vertical-align: -0.136ex;"><defs><path stroke-width="0" id="E55-MJMAIN-394" d="M51 0Q46 4 46 7Q46 9 215 357T388 709Q391 716 416 716Q439 716 444 709Q447 705 616 357T786 7Q786 4 781 0H51ZM507 344L384 596L137 92L383 91H630Q630 93 507 344Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E55-MJMAIN-394" x="0" y="0"></use></g></svg></span><script type="math/tex">\Delta</script><mechanism><span>mechanism</span></mechanism><span>:</span></code><type><span>Creature</span></type><span> with </span><mechanism style="opacity:0.5"><span>hide</span></mechanism><span> will gain 0.1 </span><mechanism><span>critical hit rate</span></mechanism></li></ol><p><span>21.5.23</span></p><ol start='' ><li><p><code>➕<span> </span><type><span>Magic</span></type><span>:</span></code></p><ul><li><code><span>name:</span></code><magic><span>扭曲虚空</span></magic></li><li><code><span>cost:</span></code><span>8</span></li><li><code><span>effect:</span></code><span>沉默并消灭所有生物</span></li></ul></li></ol><p><span>21.5.22</span></p><ol start='' ><li><code>🔧<span>bug</span></code><span>cannot attach </span><type><span>Creature</span></type><span> to </span><mechanism><span>toggled</span></mechanism><span> </span><type><span>Creature</span></type></li></ol><p><span>21.5.18</span></p><ol start='' ><li><code>🔧<span>bug:</span></code><magic><span>to_sheep</span></magic><span> will cause </span><type><span>Creature</span></type><span> with </span><mechanism><span>revive</span></mechanism><span> to lose one life and also call a </span><creature><span>sheep</span></creature></li><li><code><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1.935ex" height="1.974ex" viewBox="0 -791.7 833 850.1" role="img" focusable="false" style="vertical-align: -0.136ex;"><defs><path stroke-width="0" id="E55-MJMAIN-394" d="M51 0Q46 4 46 7Q46 9 215 357T388 709Q391 716 416 716Q439 716 444 709Q447 705 616 357T786 7Q786 4 781 0H51ZM507 344L384 596L137 92L383 91H630Q630 93 507 344Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E55-MJMAIN-394" x="0" y="0"></use></g></svg></span><script type="math/tex">\Delta</script><span>style:</span></code><span>change bugfix icon from </span>✅<span> to </span>🔧</li></ol><p><span>21.5.14</span></p><ol start='' ><li><p><code>➕<span> </span><type><span>Magic</span></type><span>:</span></code></p><ul><li><code><span>name:</span></code><magic><span>鞭策</span></magic></li><li><code><span>cost:</span></code><span>1</span></li><li><code><span>effect:</span></code><span>对一个生物造成</span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.078ex" height="1.644ex" viewBox="0 -554.9 894.6 707.6" role="img" focusable="false" style="vertical-align: -0.355ex;"><defs><path stroke-width="0" id="E41-MJMAIN-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path stroke-width="0" id="E41-MJMAIN-2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use transform="scale(0.7)" xlink:href="#E41-MJMAIN-31" x="0" y="0"></use><use transform="scale(0.7)" xlink:href="#E41-MJMAIN-2B" x="500" y="0"></use></g></svg></span><script type="math/tex">\scriptsize 1+</script><span>点伤害,如果它是召唤兽,使它攻击力</span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="3.343ex" height="1.644ex" viewBox="0 -554.9 1439.2 707.6" role="img" focusable="false" style="vertical-align: -0.355ex;"><defs><path stroke-width="0" id="E42-MJMAIN-2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path><path stroke-width="0" id="E42-MJMAIN-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use transform="scale(0.7)" xlink:href="#E42-MJMAIN-2B" x="0" y="0"></use><use transform="scale(0.7)" xlink:href="#E42-MJMAIN-31" x="777" y="0"></use><use transform="scale(0.7)" xlink:href="#E42-MJMAIN-2B" x="1278" y="0"></use></g></svg></span><script type="math/tex">\scriptsize +1+</script></li></ul></li><li><p><code>🔧<span>bug:</span></code><creature><span>hxbs</span></creature><span> deals damage 4 times to the hero if it has </span><mechanism><span>piercing</span></mechanism><span> and attack </span><type><span>Creature</span></type></p></li></ol><p><span>21.5.13</span></p><ol start='' ><li><code>🔧<span>bug:</span></code><magic><span>to_sheep</span></magic><span> will also kill the next </span><type><span>Creature</span></type><span> without triggering </span><mechanism><span>death</span></mechanism><del><span>(A powerful magic,isn&#39;t it?)</span></del></li></ol><p><span>21.5.12</span></p><ol start='' ><li><p><code>➕<span> </span><type><span>Creature</span></type><span>:</span></code></p><ul><li><code><span>name:</span></code><creature><span>回旋镖手</span></creature></li><li><code><span>attr:</span></code><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="8.13ex" height="1.994ex" viewBox="0 -605.1 3500.3 858.4" role="img" focusable="false" style="vertical-align: -0.588ex;"><defs><path stroke-width="0" id="E43-MJMAIN-34" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z"></path><path stroke-width="0" id="E43-MJMAIN-2F" d="M423 750Q432 750 438 744T444 730Q444 725 271 248T92 -240Q85 -250 75 -250Q68 -250 62 -245T56 -231Q56 -221 230 257T407 740Q411 750 423 750Z"></path><path stroke-width="0" id="E43-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path stroke-width="0" id="E43-MJMAIN-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path stroke-width="0" id="E43-MJMAIN-2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path><path stroke-width="0" id="E43-MJMAIN-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path><path stroke-width="0" id="E43-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path><path stroke-width="0" id="E43-MJMAIN-33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use transform="scale(0.7)" xlink:href="#E43-MJMAIN-34" x="0" y="0"></use><use transform="scale(0.7)" xlink:href="#E43-MJMAIN-2F" x="500" y="0"></use><use transform="scale(0.7)" xlink:href="#E43-MJMAIN-28" x="1000" y="0"></use><use transform="scale(0.7)" xlink:href="#E43-MJMAIN-32" x="1389" y="0"></use><use transform="scale(0.7)" xlink:href="#E43-MJMAIN-2B" x="2111" y="0"></use><use transform="scale(0.7)" xlink:href="#E43-MJMAIN-30" x="3111" y="0"></use><use transform="scale(0.7)" xlink:href="#E43-MJMAIN-29" x="3611" y="0"></use><use transform="scale(0.7)" xlink:href="#E43-MJMAIN-2F" x="4000" y="0"></use><use transform="scale(0.7)" xlink:href="#E43-MJMAIN-33" x="4500" y="0"></use></g></svg></span><script type="math/tex">\scriptsize 4/(2+0)/3 </script></li><li><code><span>special effect:</span></code><mechanism><span>Ranged</span></mechanism><span>;deal damage twice when attacking</span></li></ul></li></ol><p><span>21.5.9</span></p><ol start='' ><li><p><code>➕<span> </span><mechanism><span>feature</span></mechanism><span>:</span></code><span>now </span><type><span>Creatures</span></type><span> can </span><mechanism><span>buff</span></mechanism><span> each other</span></p></li><li><p><code>➕<span> </span><a><type><span>Summon</span></type></a><span>:</span></code></p><ul><li><code><span>name:</span></code><creature><span>增益型召唤兽</span></creature></li><li><code><span>attr:</span></code><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="8.13ex" height="1.994ex" viewBox="0 -605.1 3500.3 858.4" role="img" focusable="false" style="vertical-align: -0.588ex;"><defs><path stroke-width="0" id="E44-MJMAIN-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path stroke-width="0" id="E44-MJMAIN-2F" d="M423 750Q432 750 438 744T444 730Q444 725 271 248T92 -240Q85 -250 75 -250Q68 -250 62 -245T56 -231Q56 -221 230 257T407 740Q411 750 423 750Z"></path><path stroke-width="0" id="E44-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path stroke-width="0" id="E44-MJMAIN-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path stroke-width="0" id="E44-MJMAIN-2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path><path stroke-width="0" id="E44-MJMAIN-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path><path stroke-width="0" id="E44-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use transform="scale(0.7)" xlink:href="#E44-MJMAIN-32" x="0" y="0"></use><use transform="scale(0.7)" xlink:href="#E44-MJMAIN-2F" x="500" y="0"></use><use transform="scale(0.7)" xlink:href="#E44-MJMAIN-28" x="1000" y="0"></use><use transform="scale(0.7)" xlink:href="#E44-MJMAIN-31" x="1389" y="0"></use><use transform="scale(0.7)" xlink:href="#E44-MJMAIN-2B" x="2111" y="0"></use><use transform="scale(0.7)" xlink:href="#E44-MJMAIN-30" x="3111" y="0"></use><use transform="scale(0.7)" xlink:href="#E44-MJMAIN-29" x="3611" y="0"></use><use transform="scale(0.7)" xlink:href="#E44-MJMAIN-2F" x="4000" y="0"></use><use transform="scale(0.7)" xlink:href="#E44-MJMAIN-32" x="4500" y="0"></use></g></svg></span><script type="math/tex">\scriptsize 2/(1+0)/2 </script></li><li><code><span>special effect:</span></code><mechanism><span>buff</span></mechanism><span> other </span><type><span>Creature</span></type><span> of yours </span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="6.504ex" height="1.994ex" viewBox="0 -605.1 2800.3 858.4" role="img" focusable="false" style="vertical-align: -0.588ex;"><defs><path stroke-width="0" id="E45-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path stroke-width="0" id="E45-MJMAIN-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path stroke-width="0" id="E45-MJMAIN-2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path><path stroke-width="0" id="E45-MJMAIN-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path><path stroke-width="0" id="E45-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path><path stroke-width="0" id="E45-MJMAIN-2F" d="M423 750Q432 750 438 744T444 730Q444 725 271 248T92 -240Q85 -250 75 -250Q68 -250 62 -245T56 -231Q56 -221 230 257T407 740Q411 750 423 750Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use transform="scale(0.7)" xlink:href="#E45-MJMAIN-28" x="0" y="0"></use><use transform="scale(0.7)" xlink:href="#E45-MJMAIN-31" x="388" y="0"></use><use transform="scale(0.7)" xlink:href="#E45-MJMAIN-2B" x="1111" y="0"></use><use transform="scale(0.7)" xlink:href="#E45-MJMAIN-30" x="2111" y="0"></use><use transform="scale(0.7)" xlink:href="#E45-MJMAIN-29" x="2611" y="0"></use><use transform="scale(0.7)" xlink:href="#E45-MJMAIN-2F" x="3000" y="0"></use><use transform="scale(0.7)" xlink:href="#E45-MJMAIN-31" x="3500" y="0"></use></g></svg></span><script type="math/tex">\scriptsize (1+0)/1</script></li></ul></li></ol><p><span>21.5.8</span></p><ol start='' ><li><code><span>reverse </span><a href="upd.html"><span>upd.html</span></a></code><span>:The latest update will be shown at the top instead of at the bottom.</span></li><li><code><a href="index.html"><span>index.html</span></a><span> now supports PC.</span></code></li><li><code><span>new game will keep settings of the last game.</span></code></li></ol><p><span>21.5.3</span></p><ol start='' ><li><code>➕<span>some internal links</span></code></li><li><code>🔧<span>bug:</span></code><type><span>Creature</span></type><span> </span><mechanism style="color:green"><span>poisoned</span></mechanism><span> by </span><magic><span>poison</span></magic><span> to </span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="0.813ex" height="1.527ex" viewBox="0 -554.9 350 657.4" role="img" focusable="false" style="vertical-align: -0.238ex;"><defs><path stroke-width="0" id="E46-MJMAIN-33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use transform="scale(0.7)" xlink:href="#E46-MJMAIN-33" x="0" y="0"></use></g></svg></span><script type="math/tex">\scriptsize 3</script><span> or more won&#39;t die at once</span></li></ol><p><span>21.5.2</span></p><ol start='' ><li><p><code>➕<type id="summoner"><span>Hero</span></type><span>:</span></code><hero><span>Summoner</span></hero></p><ul><li><p><code><span>attr:</span></code><span> </span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="7.317ex" height="1.994ex" viewBox="0 -605.1 3150.3 858.4" role="img" focusable="false" style="vertical-align: -0.588ex;"><defs><path stroke-width="0" id="E47-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path stroke-width="0" id="E47-MJMAIN-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path><path stroke-width="0" id="E47-MJMAIN-2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path><path stroke-width="0" id="E47-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path><path stroke-width="0" id="E47-MJMAIN-2F" d="M423 750Q432 750 438 744T444 730Q444 725 271 248T92 -240Q85 -250 75 -250Q68 -250 62 -245T56 -231Q56 -221 230 257T407 740Q411 750 423 750Z"></path><path stroke-width="0" id="E47-MJMAIN-33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use transform="scale(0.7)" xlink:href="#E47-MJMAIN-28" x="0" y="0"></use><use transform="scale(0.7)" xlink:href="#E47-MJMAIN-30" x="388" y="0"></use><use transform="scale(0.7)" xlink:href="#E47-MJMAIN-2B" x="1111" y="0"></use><use transform="scale(0.7)" xlink:href="#E47-MJMAIN-30" x="2111" y="0"></use><use transform="scale(0.7)" xlink:href="#E47-MJMAIN-29" x="2611" y="0"></use><use transform="scale(0.7)" xlink:href="#E47-MJMAIN-2F" x="3000" y="0"></use><g transform="translate(2450,0)"><use transform="scale(0.7)" xlink:href="#E47-MJMAIN-33"></use><use transform="scale(0.7)" xlink:href="#E47-MJMAIN-30" x="500" y="0"></use></g></g></svg></span><script type="math/tex">\scriptsize (0+0)/30</script></p></li><li><p><code><span>skill:</span></code></p><ul><li><code><span>cost:</span></code><span> </span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="0.813ex" height="1.41ex" viewBox="0 -554.9 350 607.1" role="img" focusable="false" style="vertical-align: -0.121ex;"><defs><path stroke-width="0" id="E48-MJMAIN-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use transform="scale(0.7)" xlink:href="#E48-MJMAIN-32" x="0" y="0"></use></g></svg></span><script type="math/tex">\scriptsize 2</script></li><li><code><span>effect:</span></code><span>summon a random </span><species><span>Summon</span></species></li></ul></li></ul></li><li><p><code>➕<type><span>Species</span></type><span>:</span></code></p><ul><li><code><span>name:</span></code><species><span>Summon</span></species></li><li><code><span>description:</span></code><span>a group of </span><type><span>Creature</span></type><span> that can only be summoned by </span><a href="#summoner"><hero><span>Summoner</span></hero></a></li></ul></li><li><p><code>➕<species><span>Summon</span></species><span>:</span></code></p><ul><li><code><span>name:</span></code><creature><span>标准型召唤兽</span></creature></li><li><code><span>attr:</span></code><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="8.13ex" height="1.994ex" viewBox="0 -605.1 3500.3 858.4" role="img" focusable="false" style="vertical-align: -0.588ex;"><defs><path stroke-width="0" id="E49-MJMAIN-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path stroke-width="0" id="E49-MJMAIN-2F" d="M423 750Q432 750 438 744T444 730Q444 725 271 248T92 -240Q85 -250 75 -250Q68 -250 62 -245T56 -231Q56 -221 230 257T407 740Q411 750 423 750Z"></path><path stroke-width="0" id="E49-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path stroke-width="0" id="E49-MJMAIN-2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path><path stroke-width="0" id="E49-MJMAIN-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path><path stroke-width="0" id="E49-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use transform="scale(0.7)" xlink:href="#E49-MJMAIN-32" x="0" y="0"></use><use transform="scale(0.7)" xlink:href="#E49-MJMAIN-2F" x="500" y="0"></use><use transform="scale(0.7)" xlink:href="#E49-MJMAIN-28" x="1000" y="0"></use><use transform="scale(0.7)" xlink:href="#E49-MJMAIN-32" x="1389" y="0"></use><use transform="scale(0.7)" xlink:href="#E49-MJMAIN-2B" x="2111" y="0"></use><use transform="scale(0.7)" xlink:href="#E49-MJMAIN-30" x="3111" y="0"></use><use transform="scale(0.7)" xlink:href="#E49-MJMAIN-29" x="3611" y="0"></use><use transform="scale(0.7)" xlink:href="#E49-MJMAIN-2F" x="4000" y="0"></use><use transform="scale(0.7)" xlink:href="#E49-MJMAIN-32" x="4500" y="0"></use></g></svg></span><script type="math/tex">\scriptsize 2/(2+0)/2 </script></li><li><code><span>special effect:</span></code><span>null</span></li></ul></li><li><p><code>➕<species><span>Summon</span></species><span>:</span></code></p><ul><li><code><span>name:</span></code><creature><span>攻击型召唤兽</span></creature></li><li><code><span>attr:</span></code><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="8.13ex" height="1.994ex" viewBox="0 -605.1 3500.3 858.4" role="img" focusable="false" style="vertical-align: -0.588ex;"><defs><path stroke-width="0" id="E50-MJMAIN-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path stroke-width="0" id="E50-MJMAIN-2F" d="M423 750Q432 750 438 744T444 730Q444 725 271 248T92 -240Q85 -250 75 -250Q68 -250 62 -245T56 -231Q56 -221 230 257T407 740Q411 750 423 750Z"></path><path stroke-width="0" id="E50-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path stroke-width="0" id="E50-MJMAIN-33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z"></path><path stroke-width="0" id="E50-MJMAIN-2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path><path stroke-width="0" id="E50-MJMAIN-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path><path stroke-width="0" id="E50-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path><path stroke-width="0" id="E50-MJMAIN-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use transform="scale(0.7)" xlink:href="#E50-MJMAIN-32" x="0" y="0"></use><use transform="scale(0.7)" xlink:href="#E50-MJMAIN-2F" x="500" y="0"></use><use transform="scale(0.7)" xlink:href="#E50-MJMAIN-28" x="1000" y="0"></use><use transform="scale(0.7)" xlink:href="#E50-MJMAIN-33" x="1389" y="0"></use><use transform="scale(0.7)" xlink:href="#E50-MJMAIN-2B" x="2111" y="0"></use><use transform="scale(0.7)" xlink:href="#E50-MJMAIN-30" x="3111" y="0"></use><use transform="scale(0.7)" xlink:href="#E50-MJMAIN-29" x="3611" y="0"></use><use transform="scale(0.7)" xlink:href="#E50-MJMAIN-2F" x="4000" y="0"></use><use transform="scale(0.7)" xlink:href="#E50-MJMAIN-31" x="4500" y="0"></use></g></svg></span><script type="math/tex">\scriptsize 2/(3+0)/1 </script></li><li><code><span>special effect:</span></code><mechanism><span>Charge</span></mechanism></li></ul></li><li><p><code>➕<species><span>Summon</span></species><span>:</span></code></p><ul><li><code><span>name:</span></code><creature><span>防御型召唤兽</span></creature></li><li><code><span>attr:</span></code><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="8.13ex" height="1.994ex" viewBox="0 -605.1 3500.3 858.4" role="img" focusable="false" style="vertical-align: -0.588ex;"><defs><path stroke-width="0" id="E51-MJMAIN-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path stroke-width="0" id="E51-MJMAIN-2F" d="M423 750Q432 750 438 744T444 730Q444 725 271 248T92 -240Q85 -250 75 -250Q68 -250 62 -245T56 -231Q56 -221 230 257T407 740Q411 750 423 750Z"></path><path stroke-width="0" id="E51-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path stroke-width="0" id="E51-MJMAIN-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path stroke-width="0" id="E51-MJMAIN-2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path><path stroke-width="0" id="E51-MJMAIN-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path><path stroke-width="0" id="E51-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path><path stroke-width="0" id="E51-MJMAIN-33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use transform="scale(0.7)" xlink:href="#E51-MJMAIN-32" x="0" y="0"></use><use transform="scale(0.7)" xlink:href="#E51-MJMAIN-2F" x="500" y="0"></use><use transform="scale(0.7)" xlink:href="#E51-MJMAIN-28" x="1000" y="0"></use><use transform="scale(0.7)" xlink:href="#E51-MJMAIN-31" x="1389" y="0"></use><use transform="scale(0.7)" xlink:href="#E51-MJMAIN-2B" x="2111" y="0"></use><use transform="scale(0.7)" xlink:href="#E51-MJMAIN-30" x="3111" y="0"></use><use transform="scale(0.7)" xlink:href="#E51-MJMAIN-29" x="3611" y="0"></use><use transform="scale(0.7)" xlink:href="#E51-MJMAIN-2F" x="4000" y="0"></use><use transform="scale(0.7)" xlink:href="#E51-MJMAIN-33" x="4500" y="0"></use></g></svg></span><script type="math/tex">\scriptsize 2/(1+0)/3 </script></li><li><code><span>special effect:</span></code><mechanism><span>Taunt</span></mechanism></li></ul></li><li><p><code><span>beautify upd.md</span></code></p></li><li><p><code>➕<species><span>Summon</span></species><span>:</span></code></p><ul><li><code><span>name:</span></code><creature><span>法术型召唤兽</span></creature></li><li><code><span>attr:</span></code><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="8.13ex" height="1.994ex" viewBox="0 -605.1 3500.3 858.4" role="img" focusable="false" style="vertical-align: -0.588ex;"><defs><path stroke-width="0" id="E52-MJMAIN-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path stroke-width="0" id="E52-MJMAIN-2F" d="M423 750Q432 750 438 744T444 730Q444 725 271 248T92 -240Q85 -250 75 -250Q68 -250 62 -245T56 -231Q56 -221 230 257T407 740Q411 750 423 750Z"></path><path stroke-width="0" id="E52-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path stroke-width="0" id="E52-MJMAIN-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path><path stroke-width="0" id="E52-MJMAIN-2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path><path stroke-width="0" id="E52-MJMAIN-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path stroke-width="0" id="E52-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use transform="scale(0.7)" xlink:href="#E52-MJMAIN-32" x="0" y="0"></use><use transform="scale(0.7)" xlink:href="#E52-MJMAIN-2F" x="500" y="0"></use><use transform="scale(0.7)" xlink:href="#E52-MJMAIN-28" x="1000" y="0"></use><use transform="scale(0.7)" xlink:href="#E52-MJMAIN-30" x="1389" y="0"></use><use transform="scale(0.7)" xlink:href="#E52-MJMAIN-2B" x="2111" y="0"></use><use transform="scale(0.7)" xlink:href="#E52-MJMAIN-31" x="3111" y="0"></use><use transform="scale(0.7)" xlink:href="#E52-MJMAIN-29" x="3611" y="0"></use><use transform="scale(0.7)" xlink:href="#E52-MJMAIN-2F" x="4000" y="0"></use><use transform="scale(0.7)" xlink:href="#E52-MJMAIN-31" x="4500" y="0"></use></g></svg></span><script type="math/tex">\scriptsize 2/(0+1)/1 </script></li><li><code><span>special effect:</span></code><mechanism><span>Ms+1</span></mechanism></li></ul></li><li><ul><li><code>➕<a href="upd.html"><span>upd.html</span></a></code></li><li><code><span>link </span><a href="index.html"><span>index.html</span></a><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1.807ex" height="1.45ex" viewBox="0 -566 778 624.4" role="img" focusable="false" style="vertical-align: 0.084ex; margin-bottom: -0.219ex;"><defs><path stroke-width="0" id="E53-MJMAIN-2261" d="M56 444Q56 457 70 464H707Q722 456 722 444Q722 430 706 424H72Q56 429 56 444ZM56 237T56 250T70 270H707Q722 262 722 250T707 230H70Q56 237 56 250ZM56 56Q56 71 72 76H706Q722 70 722 56Q722 44 707 36H70Q56 43 56 56Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E53-MJMAIN-2261" x="0" y="0"></use></g></svg></span><script type="math/tex">\ce{#}</script><a href="upd.html"><span>upd.html</span></a></code></li></ul></li></ol><p><span>21.5.1</span></p><ol start='' ><li><code>🔧<span>bug:</span></code><span> the buff of the </span><hero><span>knight&#39;s</span></hero><span> skill and the exhaustion count is equivalent</span></li><li><code><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1.935ex" height="1.974ex" viewBox="0 -791.7 833 850.1" role="img" focusable="false" style="vertical-align: -0.136ex;"><defs><path stroke-width="0" id="E55-MJMAIN-394" d="M51 0Q46 4 46 7Q46 9 215 357T388 709Q391 716 416 716Q439 716 444 709Q447 705 616 357T786 7Q786 4 781 0H51ZM507 344L384 596L137 92L383 91H630Q630 93 507 344Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E55-MJMAIN-394" x="0" y="0"></use></g></svg></span><script type="math/tex">\Delta</script><span>card:</span></code><span> </span><magic><span>cloing</span></magic><span> </span><type><span>Creature</span></type><span> won&#39;t trigger </span><mechanism><span>appear</span></mechanism></li><li><code><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1.935ex" height="1.974ex" viewBox="0 -791.7 833 850.1" role="img" focusable="false" style="vertical-align: -0.136ex;"><defs><path stroke-width="0" id="E55-MJMAIN-394" d="M51 0Q46 4 46 7Q46 9 215 357T388 709Q391 716 416 716Q439 716 444 709Q447 705 616 357T786 7Q786 4 781 0H51ZM507 344L384 596L137 92L383 91H630Q630 93 507 344Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E55-MJMAIN-394" x="0" y="0"></use></g></svg></span><script type="math/tex">\Delta</script><span>card:</span></code><span> </span><magic><span>to_sheep</span></magic><span> won&#39;t trigger </span><mechanism><span>death</span></mechanism></li></ol><p><span>21.4.28</span></p><ol start='' ><li><code><del>➖<span> intro.md</span></del></code></li><li><code>🔧<span>bug:</span></code><span> two player shares the same deck with the </span><option><span>reflexing deck</span></option><span> option on</span></li></ol><p><span>21.4.25</span></p><ol start='' ><li><code>➕<span>upd.md </span></code></li><li><code>➕<span>intro.md</span></code></li></ol></div></div>
+</body>
+</html>

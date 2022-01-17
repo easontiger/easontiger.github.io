@@ -1,0 +1,65 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="jquery-3.4.1.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css"></link>
+		<title>PVP</title>
+	</head>
+	<body>
+		<input type="text" id="com">
+		<button id="sub">submit</button>
+		<button id="link">link</button>
+		<div style="text-align: center;position: absolute;left: 170px;top: 175px;"><input type="button" id="toggle" style="display: none;font-weight: bolder;" value="Start turn"></div>
+		<button id="set">back</button>
+		<div id="l" style="position: absolute;display: none;">
+			<a href="upd.html"><button>update</button></a>
+			<a href="deck.html"><button>deck</button></a>
+		</div>
+		<div id="back" style="position: absolute;background-color:yellowgreen;display: none;">
+			<button onclick="p1.ma=p1.m=p2.m=p2.ma=Infinity;repaint();_event();">Infinity magic</button><br>
+			<button onclick="fs.ald=!fs.ald;">All legend</button><br>
+			<button onclick="newG()">New Game</button>
+			<input type="text" id="call">p1:<input id="di1" type="radio" name="di" value="1" checked="true">p2:<input type="radio" name="di" value="2"><button onclick="
+			var px=document.getElementById('di1').checked?p1:p2;
+			try{
+				var c1=dict(document.getElementById('call').value);
+				if(c1==null)throw 'No such Card!';
+				px.hand.push(new Card(c1));}catch(e){alert(e)};
+			repaint();
+			_event();
+			">Give</button>
+			<button onclick="_cmd_='';">Clear Command</button>
+			<button onclick="
+				var p=((window.id==1)?p1:p2),pr=((window.id==2)?p1:p2);
+				new_turn(pr);end_turn(p);
+				end_turn(pr);new_turn(p);
+				repaint();_event();
+			">Skip Turn</button>
+		</div>
+		<div style="display: flex;justify-content: space-between;align-items: flex-start;">
+			<div id="p1"></div>
+			<div id="fs"></div>
+			<div id="store"></div>
+			<div id="p2"></div>
+		</div>
+		<script src="rand.js"></script>
+		<script src="main.js"></script>
+		<script src="clickctrl.js"></script>
+		<script src="x.js"></script>
+		<script>
+			var com=document.getElementById("com");
+			document.getElementById("sub").onclick=function(){
+				var comm=com.value;
+				try{
+					eval(comm);
+				}catch(e){
+					alert(e);
+				}
+				repaint();
+				_event();
+			};
+			document.getElementById("set").onclick=function(){$("#back").toggle();};
+			document.getElementById("link").onclick=function(){$("#l").toggle();};
+		</script>
+	</body>
+</html>

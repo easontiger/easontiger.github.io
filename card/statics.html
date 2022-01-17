@@ -1,0 +1,54 @@
+<html>
+	<head><meta charset="utf-8">
+		<script src="jquery-3.4.1.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css"></link>
+	</head>
+	<body>
+		<div id="b"></div><br>
+		<input type="text" id="x">
+		<input type="button" onclick="
+			var x1=document.getElementById('x').value;
+			cd=[];
+			fs.ald=(document.getElementById('ald').checked);
+			for(var i in card_dict){
+				var c=dict(card_dict[i]);
+				if(eval(x1))cd.push(card_dict[i]);
+			}
+			rpaint();
+		" value="submit">
+		<input id="ald" type="checkbox">Ald
+		<div id="c"></div>
+		<script src="rand.js"></script>
+		<script src="main.js"></script>
+		<script>
+			var ma=0,cr=0,cos=[],x=0,cd=card_dict,len=cd.length,ld=0;
+			function rpaint(){
+				var ma=0,cr=0,cos=[],x=0,len=cd.length;
+				var a=document.getElementById("b");
+				for(var i=0;i<10;i++){cos.push(0);}
+				for(var i in cd){
+					c=dict(cd[i]);
+					if(c instanceof Creature)cr++;
+					else if(c instanceof Magic)ma++;
+					cos[c.ma]+=1;
+					x+=c.ma;
+				}
+				a.innerHTML="Total Card num:"+len+"<br>Magic:"+ma+"<br>Creature:"+cr+"<br>Average cost:"+x/len;
+				ld=0;
+				for(var i in cd){
+					if(dict(cd[i]).to_ld(cd[i])){
+						ld+=1;
+					}
+				}
+				a.innerHTML+="<br>Legendary:"+ld;
+				for(var i=0;i<10;i++){a.innerHTML+="<br>"+i+":"+cos[i];};
+				var x1=document.getElementById("c");
+				x1.innerHTML="";
+				for(var i in cd){
+					x1.appendChild(s(new Card(dict(cd[i])),true));
+				}
+			}
+			rpaint();
+		</script>
+	</body>
+</html>
