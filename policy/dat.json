@@ -1,104 +1,433 @@
-[
-	{
-		"con":{"e":"A drought happens,what should you do?","c":"发生旱灾,如何应对?"},
-		"cho":[
-			{
-				"name":{"e":"Make the rich donate money and maintain the tax rate","c":"勒令地方富商捐款赈灾,维持税收"},
+﻿[{
+		"con":{
+			"e":"A drought happens,what should you do?",
+			"c":"发生旱灾,如何应对?"
+		},
+		"cho":[{
+				"name":{
+					"e":"Make the rich donate money and maintain the tax rate",
+					"c":"勒令地方富商捐款赈灾,维持税收"
+				},
 				"d":[0,0,1,0]
-			},
-			{
-				"name":{"e":"Cut the tax","c":"减少税收"},
+			},{
+				"name":{
+					"e":"Cut the tax",
+					"c":"减少税收"
+				},
 				"d":[-2,0,0,-1]
-			},
-			{
-				"name":{"e":"Maintain the tax rate and open official barn to give out food","c":"维持税收,开放义仓"},
+			},{
+				"name":{
+					"e":"Maintain the tax rate and open official barn to give out food",
+					"c":"维持税收,开放义仓"
+				},
 				"d":[-2,0,2,1]
-			}
-		]
-	},
-	{
-		"con":{"e":"Who should be responsible for this year's test?","c":"谁来担任今年科举考试的命题人?"},
-		"cho":[
-			{
-				"name":{"e":"The official responsible for civil affair","c":"负责民生问题的官员"},
+			}]
+	},{
+		"con":{
+			"e":"Who should be responsible for this year's test?",
+			"c":"谁来担任今年科举考试的命题人?"
+		},
+		"cho":[{
+				"name":{
+					"e":"The official responsible for civil affair",
+					"c":"负责民生问题的官员"
+				},
 				"d":[1,0,1,-1]
-			},
-			{
-				"name":{"e":"The official responsible for law enforcement","c":"负责刑罚问题的官员"},
+			},{
+				"name":{
+					"e":"The official responsible for law enforcement",
+					"c":"负责刑罚问题的官员"
+				},
 				"d":[0,0,0,2]
-			},
-			{
-				"name":{"e":"The official responsible for manners","c":"负责朝臣进退的官员"},
+			},{
+				"name":{
+					"e":"The official responsible for manners",
+					"c":"负责朝臣进退的官员"
+				},
 				"d":[0,0,-1,-1]
-			}
-		]
-	},
-	{
-		"con":{"e":"What to build this year?","c":"今年的工程重点在于?"},
-		"cho":[
-			{
-				"name":{"e":"Continue to maintain local water conservancy facilities","c":"继续修缮地方的水利工程"},
+			}]
+	},{
+		"con":{
+			"e":"What to build this year?",
+			"c":"今年的工程重点在于?"
+		},
+		"cho":[{
+				"name":{
+					"e":"Continue to maintain local water conservancy facilities",
+					"c":"继续修缮地方的水利工程"
+				},
 				"d":[-1,0,2,0]
-			},
-			{
-				"name":{"e":"Help the army build fortifications","c":"帮助军队兴建边防工程"},
+			},{
+				"name":{
+					"e":"Help the army build fortifications",
+					"c":"帮助军队兴建边防工程"
+				},
 				"d":[-1,2,-1,-1]
-			},
-			{
-				"name":{"e":"Build buildings for ceremonies","c":"兴建皇帝祭天所需的仪台"},
+			},{
+				"name":{
+					"e":"Build buildings for religious ceremonies",
+					"c":"兴建皇帝祭天所需的仪台"
+				},
 				"d":[-1,0,0,2]
-			}
-		]
-	},
-	{
-		"con":{"e":"Which part of the law should be strengthened?","c":"哪一部分律法需要加强?"},
-		"cho":[
-			{
-				"name":{"e":"About limiting the power of the central government","c":"有关限制朝臣权力部分"},
+			}]
+	},{
+		"con":{
+			"e":"Which part of the law should be strengthened?",
+			"c":"哪一部分律法需要加强?"
+		},
+		"cho":[{
+				"name":{
+					"e":"About limiting the power of the central government",
+					"c":"有关限制朝臣权力部分"
+				},
 				"d":[0,0,-1,2]
-			},
-			{
-				"name":{"e":"About limiting the power of the local government","c":"有关规范地方管理部分"},
+			},{
+				"name":{
+					"e":"About limiting the power of the local government",
+					"c":"有关规范地方管理部分"
+				},
 				"d":[0,-1,0,2]
-			},
-			{
-				"name":{"e":"About limiting the power of the local army","c":"有关削弱边境将领部分"},
+			},{
+				"name":{
+					"e":"About limiting the power of the local army",
+					"c":"有关削弱边境将领部分"
+				},
 				"d":[0,-1,0,2]
-			}
-		]
-	},
-	{
-		"con":{"e":"How to strengthen the central army?","c":"如何加强禁军?"},
-		"cho":[
-			{
-				"name":{"e":"By dispatching excellent local soldiers and generals to the central army","c":"调遣边疆地方得力将兵,编入禁军"},
+			}]
+	},{
+		"con":{
+			"e":"How to strengthen the central army?",
+			"c":"如何加强禁军?"
+		},
+		"cho":[{
+				"name":{
+					"e":"By dispatching excellent local soldiers and generals to the central army",
+					"c":"调遣边疆地方得力将兵,编入禁军"
+				},
 				"d":[0,-2,-1,1]
-			},
-			{
-				"name":{"e":"By holding tests to select generals","c":"增设无惧,从中择优挑选将才"},
+			},{
+				"name":{
+					"e":"By holding tests to select generals",
+					"c":"增设武举,从中择优挑选将才"
+				},
 				"d":[0,1,1,0]
-			},
-			{
-				"name":{"e":"By recruiting local refugees","c":"将地方流民编入禁军"},
+			},{
+				"name":{
+					"e":"By recruiting local refugees",
+					"c":"将地方流民编入禁军"
+				},
 				"d":[0,-1,1,-1]
-			}
-		]
-	},
-	{
-		"con":{"e":"Which department should be downsized?","c":"应裁撤哪个部门的官员?"},
-		"cho":[
-			{
-				"name":{"e":"The department of civil affair","c":"裁撤负责民生的官员"},
+			}]
+	},{
+		"con":{
+			"e":"Which department should be downsized?",
+			"c":"应裁撤哪个部门的官员?"
+		},
+		"cho":[{
+				"name":{
+					"e":"The department of civil affair",
+					"c":"裁撤负责民生的官员"
+				},
 				"d":[-1,0,0,1]
-			},
-			{
-				"name":{"e":"The department for punishment","c":"裁撤负责刑罚的部门"},
+			},{
+				"name":{
+					"e":"The department for punishment",
+					"c":"裁撤负责刑罚的部门"
+				},
 				"d":[0,0,0,-1]
-			},
-			{
-				"name":{"e":"None","c":"保持不变"},
+			},{
+				"name":{
+					"e":"None",
+					"c":"保持不变"
+				},
 				"d":[0,0,0,0]
-			}
-		]
-	}
-]
+			}]
+	},{
+		"con":{
+			"c":"发生了农民起义,如何应对?",
+			"e":"A rebellion occurs,what to do?"
+		},
+		"cho":[{
+				"name":{
+					"c":"派军队剿匪",
+					"e":"Send the army"
+				},
+				"d":[0,1,0,1]
+			},{
+				"name":{
+					"c":"派使者招安",
+					"e":"Send a messenger to persuade them to surrender"
+				},
+				"d":[0,0,0,-1]
+			},{
+				"name":{
+					"c":"彻查当地官员,并补贴民众损失",
+					"e":"Check the local officials and make up for the loss of people"
+				},
+				"d":[-1,0,1,-1]
+			}]
+	},{
+		"con":{
+			"c":"今年科举考试南方录取人数显著高于北方,该怎么做?",
+			"e":"The number of southern officials passing this year's test was much greater than the northern ones,what to do?"
+		},
+		"cho":[{
+				"name":{
+					"c":"彻查负责民生问题的官员",
+					"e":"Check the officials responsible for civil affair"
+				},
+				"d":[0,0,-1,1]
+			},{
+				"name":{
+					"c":"静观其变,按榜录取",
+					"e":"Don't do any thing about it and accept the result"
+				},
+				"d":[0,0,0,-1]
+			},{
+				"name":{
+					"c":"裁撤南方官员,本次科考作废",
+					"e":"Downsize the southern officials and declare the test void"
+				},
+				"d":[0,0,-2,-2]
+			}]
+	},{
+		"con":{
+			"c":"宫殿需要翻修,采取哪种方案?",
+			"e":"The palace needs renovation,which measure to adopt?"
+		},
+		"cho":[{
+				"name":{
+					"c":"多征徭役,减少用工成本",
+					"e":"force people to do the work to reduce labor cost"
+				},
+				"d":[1,0,-1,0]
+			},{
+				"name":{
+					"c":"缩减自己的用度,筹措资金",
+					"e":"Cut your budget to save money"
+				},
+				"d":[0,0,2,-1]
+			},{
+				"name":{
+					"c":"邀请西洋工程师参与建设,提供先进技术",
+					"e":"Invite foreign architects to take part in construction to get advanced technology"
+				},
+				"d":[-1,0,-1,-1]
+			}]
+	},{
+		"con":{
+			"c":"你的老师犯法,如何处置?",
+			"e":"Your teacher breaks the law,how to deal with the case?"
+		},
+		"cho":[{
+				"name":{
+					"c":"公开严查,以正视听",
+					"e":"Publish the case and investigate it to reveal the truth"
+				},
+				"d":[0,0,-1,2]
+			},{
+				"name":{
+					"c":"念在师恩,不作处理",
+					"e":"Considering his kindness,ignore it"
+				},
+				"d":[0,0,-1,-1]
+			},{
+				"name":{
+					"c":"私下调查,严厉警告",
+					"e":"Investigating secretly and warn him"
+				},
+				"d":[0,0,0,0]
+			}]
+	},{
+		"con":{
+			"c":"今年的军事政策?",
+			"e":"What is this year's military policy"
+		},
+		"cho":[{
+				"name":{
+					"c":"继续积极向外军事扩张,抽调军队支援",
+					"e":"Continue military expansion positively and dispatch troops to reinforce them"
+				},
+				"d":[-1,1,0,-1]
+			},{
+				"name":{
+					"c":"维持现有状况,屯田养兵",
+					"e":"Remain the present situation and make the army rest and recover"
+				},
+				"d":[1,1,0,0]
+			},{
+				"name":{
+					"c":"向内收缩,调整为防守态势",
+					"e":"Switch to a defensive policy"
+				},
+				"d":[0,0,-2,1]
+			}]
+	},{
+		"con":{
+			"c":"应裁撤哪个部门的官员?",
+			"e":"Which department should be downsized?"
+		},
+		"cho":[{
+				"name":{
+					"c":"裁撤负责民生的官员",
+					"e":"The department of civil affair"
+				},
+				"d":[-1,0,0,0]
+			},{
+				"name":{
+					"c":"保持不变",
+					"e":"None"
+				},
+				"d":[0,0,0,0]
+			},{
+				"name":{
+					"c":"裁撤负责军事的官员",
+					"e":"The department of military"
+				},
+				"d":[0,-1,0,1]
+			}]
+	},{
+		"con":{
+			"c":"灾情已过,如何调整经济政策?",
+			"e":"The natural disaster has passed.How to shift the economy policy?"
+		},
+		"cho":[{
+				"name":{
+					"c":"增加税收,填补国库赈灾后的亏空",
+					"e":"Add tax to make up for the loss by the disaster"
+				},
+				"d":[3,0,-2,-1]
+			},{
+				"name":{
+					"c":"降低税收,继续与民修养生息",
+					"e":"Lower the tax to let the people relax"
+				},
+				"d":[0,0,2,2]
+			},{
+				"name":{
+					"c":"增加税收,但是官方放贷给无力偿还债务的人民",
+					"e":"Increase tax and lend money officially to those who are unable to pay the debt"
+				},
+				"d":[-1,0,-2,-1]
+			}]
+	},{
+		"con":{
+			"c":"今年科考重点?",
+			"e":"What's the focus of this year's test?"
+		},
+		"cho":[{
+				"name":{
+					"c":"政事策论为主",
+					"e":"Policy"
+				},
+				"d":[0,0,0,2]
+			},{
+				"name":{
+					"c":"诗词歌赋为主",
+					"e":"Literature"
+				},
+				"d":[0,0,1,0]
+			},{
+				"name":{
+					"c":"哲理科技为主",
+					"e":"Science"
+				},
+				"d":[0,0,-1,0]
+			}]
+	},{
+		"con":{
+			"c":"花园受损,如何修理?",
+			"e":"The garden was damaged,how to repair it?"
+		},
+		"cho":[{
+				"name":{
+					"c":"多用稀有华贵材料,兴建新宫殿花园",
+					"e":"Use more rare and expensive material to build new palaces and gardens"
+				},
+				"d":[-2,0,-1,2]
+			},{
+				"name":{
+					"c":"仅修补有所破损之处,以节流开支",
+					"e":"only maintain to save money"
+				},
+				"d":[1,0,0,-2]
+			},{
+				"name":{
+					"c":"聘请西洋专家,增添西洋新式建筑",
+					"e":"Recruit foreign experts to build modern foreign buildings"
+				},
+				"d":[-1,0,-1,-1]
+			}]
+	},{
+		"con":{
+			"c":"严查何事?",
+			"e":"Investigate which thing?"
+		},
+		"cho":[{
+				"name":{
+					"c":"京城官员大兴土木修建私宅花园,开销甚大",
+					"e":"Central officials spend a lot building a lot of private houses and gardens"
+				},
+				"d":[-1,0,1,2]
+			},{
+				"name":{
+					"c":"地方亲王行事孟浪,礼仪规格隐隐有僭越之势",
+					"e":"Local princes act impolitely and seems to covet your position"
+				},
+				"d":[0,0,1,3]
+			},{
+				"name":{
+					"c":"新驸马实则在考取功名前已有妻室,如今所为可称抛家弃子",
+					"e":"In fact,your new son-in-law had a family before being enrolled and his behavior can be considered as abandoning his family"
+				},
+				"d":[0,0,2,-1]
+			}]
+	},{
+		"con":{
+			"c":"周边国家蠢蠢欲动,如何应对?",
+			"e":"Neighboring countries are preparing a war,what to do?"
+		},
+		"cho":[{
+				"name":{
+					"c":"率先派兵攻打周边政权,以儆效尤",
+					"e":"Send troops to attack first to set a warning example"
+				},
+				"d":[-1,2,0,1]
+			},{
+				"name":{
+					"c":"按兵不动,但是多派兵力,严阵以待",
+					"e":"Send troops to the border to defend"
+				},
+				"d":[0,1,0,-2]
+			},{
+				"name":{
+					"c":"派遣使者商队进行和谈贸易,以和平之举消除隐患",
+					"e":"Send messengers and merchant to trade and negotiate to eliminate danger through peaceful measures"
+				},
+				"d":[1,-1,0,0]
+			}]
+	},{
+		"con":{
+			"c":"应裁撤哪个部门的官员?",
+			"e":"Which department should be downsized?"
+		},
+		"cho":[{
+				"name":{
+					"c":"裁撤负责人事的官员",
+					"e":"The human resource department"
+				},
+				"d":[-1,-1,-1,1]
+			},{
+				"name":{
+					"c":"裁撤负责科举的官员",
+					"e":"The department for national test"
+				},
+				"d":[0,0,-2,1]
+			},{
+				"name":{
+					"c":"保持不变",
+					"e":"None"
+				},
+				"d":[0,0,0,0]
+			}]
+	}]
