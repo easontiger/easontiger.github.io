@@ -21,6 +21,15 @@ class Pol {
         this.cho = cho;
     }
 }
+function read(inp) {
+    var f = inp.files[0], fr = new FileReader();
+    fr.onloadend = function (e) {
+        pol = JSON.parse(e.currentTarget.result);
+        data = new attr();
+        write();
+    };
+    fr.readAsText(f);
+}
 $.ajax({
     type: 'GET',
     url: 'dat.json',
